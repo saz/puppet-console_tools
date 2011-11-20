@@ -1,4 +1,4 @@
-name    'saz-console-tools'
+name    'saz-console_tools'
 version '1.0.0'
 source 'UNKNOWN'
 author 'saz'
