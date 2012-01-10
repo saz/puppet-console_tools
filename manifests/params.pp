@@ -4,7 +4,7 @@ class console_tools::params {
       $package = 'console-tools'
       $config_dir = '/etc/console-tools/'
       $config_file = "${config_dir}config"
-      $config_source = 'puppet:///modules/console_tools/config',
+      $config_source = 'puppet:///modules/console_tools/config'
     }
     default: {
       fail("Unsupported platform: ${::operatingsystem}")
