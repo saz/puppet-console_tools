@@ -43,15 +43,13 @@
 #     Default: use config in module
 #
 # Actions:
-#   Installs tzdata and configures timezone
+#   Installs console-tools and configures it.
 #
 # Requires:
 #   Nothing
 #
 # Sample Usage:
-#   class { 'timezone':
-#     timezone => 'Europe/Berlin',
-#   }
+#   class { 'console_tools': }
 #
 # [Remember: No empty lines between comments and class definition]
 class console_tools(
@@ -75,8 +73,7 @@ class console_tools(
       }
     }
     /(absent)/: {
-      # Leave package installed, as it is a system dependency
-      $package_ensure = 'present'
+      $package_ensure = 'absent'
     }
     default: {
       fail('ensure parameter must be present or absent')
