@@ -63,7 +63,7 @@ class console_tools(
   $config_dir = $console_tools::params::config_dir,
   $config_dir_purge = true,
   $config_dir_replace = true,
-  $source = $console_tools::params::config_source,
+  $source = $console_tools::params::config_source
 ) inherits console_tools::params {
 
   case $ensure {
