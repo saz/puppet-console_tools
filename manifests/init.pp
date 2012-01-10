@@ -73,12 +73,10 @@ class console_tools(
       } else {
         $package_ensure = 'present'
       }
-      $config_ensure = 'link'
     }
     /(absent)/: {
       # Leave package installed, as it is a system dependency
       $package_ensure = 'present'
-      $config_ensure = 'absent'
     }
     default: {
       fail('ensure parameter must be present or absent')
@@ -90,7 +88,7 @@ class console_tools(
   }
 
   file { $config_dir:
-    ensure  => $config_ensure,
+    ensure  => $ensure,
     owner   => 'root',
     group   => 'root',
     recurse => true,
@@ -100,7 +98,7 @@ class console_tools(
   }
 
   file { $config_file:
-    ensure  => $config_ensure,
+    ensure  => $ensure,
     owner   => 'root',
     group   => 'root',
     mode    => 0644,
